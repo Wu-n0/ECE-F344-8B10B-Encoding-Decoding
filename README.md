@@ -1,18 +1,42 @@
-# 8B/10B Encoder/Decoder
+# ECE F344 - Information Theory & Coding  
+## 8B/10B Encoding & Decoding
 
-This project focuses on the implementation of an 8B/10B encoder and decoder for Ethernet PHY using Python. The 8B/10B encoding scheme is widely used in high-speed communication systems to ensure reliable and efficient data transmission. The project also includes verification of the implemented encoder/decoder using MATLAB.
+This project implements the **8B/10B encoding scheme**, which is widely used in high-speed data transmission systems like **Ethernet, PCIe, and SATA**. The main goal is to convert **8-bit data into 10-bit symbols** to ensure **error detection, clock recovery, and reliable communication**.
 
-## Features
+The implementation is done in **Python**, and MATLAB is used for verification to ensure correctness.
 
-- **8B/10B Encoding:** The project includes an implementation of the 8B/10B encoding scheme, which converts 8-bit data into 10-bit code groups. This encoding technique ensures DC balance and provides sufficient transition density for clock recovery.
+---
 
-- **8B/10B Decoding:** The decoder module can successfully recover the original 8-bit data from the encoded 10-bit code groups. It handles the decoding process by identifying and correcting any errors introduced during transmission.
+## What’s This About?
+In high-speed networks, raw binary data isn’t sent directly. Instead, it is encoded using a scheme like **8B/10B**, which:
+- Ensures **DC balance** (equal number of 0s and 1s to prevent signal distortion).
+- Adds **extra transitions for clock synchronization**.
+- Provides **basic error detection** to catch transmission errors.
 
-- **Python Implementation:** The encoder and decoder are implemented using Python programming language, which offers flexibility, ease of use, and a wide range of available libraries for data manipulation and analysis.
+This project covers both **encoding and decoding**, making it a great hands-on example of how real-world digital communication works.
 
-- **Verification with MATLAB:** The implemented 8B/10B encoder and decoder are verified using MATLAB. The verification process includes comparing the output of the encoder/decoder with expected results to ensure the accuracy and correctness of the implementation.
+---
 
-## Documentation
+## Project Files
+The project files are located inside the `Code/` folder:
 
-For detailed information on the project, including usage instructions, code examples, and detailed explanations of the 8B/10B encoding and decoding algorithms, please refer to the documentation. The documentation provides a comprehensive guide to understanding and utilizing the encoder and decoder modules effectively.
+- `main.py` - The main script for encoding and decoding.
+- `decode.py` - The decoder that converts 10-bit symbols back to 8-bit data.
+- `matlab_code.m` - MATLAB script to verify the correctness of the implementation.
+- `documentation.pdf` - Detailed explanation of how 8B/10B encoding works.
 
+---
+
+## How to Run It
+Make sure you have **Python 3+** installed, then you can encode or decode data using:
+
+```bash
+python main.py
+python decode.py
+```
+
+If you want to verify the results using MATLAB, open MATLAB and run:
+
+```matlab
+run('matlab_code.m')
+```
